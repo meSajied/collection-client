@@ -84,8 +84,9 @@ const Login = () => {
           "Content-Type": "application/json"
         }})
           .then(res => {
-            if(res.data?.username){
+            if(res.data?.username) {
               login(res.data);
+              console.log(res.data)
             } else {
               setShowWarning(true);
             }
