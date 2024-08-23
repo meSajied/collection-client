@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import {axiosInstance} from "./axiosInstance";
+import {axiosInstance} from "../axiosInstance";
 
-const FetchData = () => {
+const FetchMyCollection = (username) => {
   const [categories, setCategories] = useState([]);
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,11 +10,11 @@ const FetchData = () => {
   useEffect(() => {
     const FetchData = async () => {
       try {
-        const responseCategory = await axiosInstance.get('/collections/largest');
-        setCategories(responseCategory.data);
-        const responseCollection = await axiosInstance.get('/collections/latest');
-        setCollections(responseCollection.data);
-
+        const res = await axiosInstance.get(`/collections/user/${username}`);
+        const dataArray = Array.isArray(res.data) ? res.data : [res.data];
+        setCollections(prev => [...prev, ...dataArray]);
+        //setCollections(res.data);
+        console.log(collections)
       } catch (error) {
         setError(error.message);
       } finally {
@@ -25,7 +25,7 @@ const FetchData = () => {
     FetchData();
   }, []);
 
-  return {categories, collections, loading, error}
+  return {collections, loading, error}
 };
 
-export {FetchData}
+export {FetchMyCollection}

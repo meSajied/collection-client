@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {axiosInstance} from "../axiosInstance";
 import {useParams} from "react-router";
 import {Link} from "react-router-dom";
-import {FetchMyCollection} from "../FetchMyCollection";
+import {FetchMyCollection} from "../fetchers/FetchMyCollection";
 
 const MyCollections = () => {
   const {username} = useParams();

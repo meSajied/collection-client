@@ -32,6 +32,14 @@ function UserDropDown(name) {
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
                 My Collection
               </Link>
+              <Link to='/collection/add'
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
+                Add Collection
+              </Link>
+              <Link to='/logout'
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
+                Logout
+              </Link>
               {name.authorities === "[ROLE_ADMIN]"? <Link to="/admin"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
                 Admin Panel</Link>:null}

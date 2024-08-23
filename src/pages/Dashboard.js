@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {FetchData} from '../FetchData';
+import {FetchData} from '../fetchers/FetchData';
 import {useAuth} from "../account/Authentication";
 import {Navigate} from "react-router";
 import {Navbar} from "../Navbar";
