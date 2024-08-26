@@ -57,7 +57,7 @@ const CollectionPage = () => {
         <div className="flex justify-between items-start">
           <div className="w-1/2">
             <img
-                src="http://localhost:8080/collections/uploads/1.jpeg"
+                src="http://localhost:8080/uploads/8.png"
                 alt={collection.name}
                 className="w-full h-auto object-cover rounded-lg shadow-md"
             />

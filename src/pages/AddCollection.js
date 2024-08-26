@@ -72,10 +72,6 @@ const AddCollection = () => {
 
   };
 
-  useEffect(() => {
-    console.log(form);
-  }, [form]);
-
   return (
       <form onSubmit={handleSubmit} className="p-8 max-w-lg mx-auto bg-white shadow-lg rounded-md">
         <div className="mb-4">
