@@ -6,9 +6,13 @@ const Navbar = () => {
   const {isLoggedIn, user} = useAuth();
 
   return (
-      <nav className="bg-gray-200 p-1 flex justify-end border-1">
-        {isLoggedIn ? UserDropDown(user) :
-            <Link to="/login" className="text-xl border font-semibold underline"> Login </Link>}
+      <nav className="bg-gray-200 p-1">
+        <div className="text-xl font-semibold flex justify-end space-x-3 underline">
+          <div>
+            {isLoggedIn ? UserDropDown(user) :
+                <Link to="/login"> Login </Link>}
+          </div>
+        </div>
       </nav>
   )
 }

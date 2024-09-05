@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import {useAuth} from "./Authentication";
 import {Navigate} from "react-router";
+import {axiosInstance} from "../axiosInstance";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -79,7 +80,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8080/user/login', formData, {
+      await axiosInstance.post('/user/login', formData, {
         headers: {
           "Content-Type": "application/json"
         }})
